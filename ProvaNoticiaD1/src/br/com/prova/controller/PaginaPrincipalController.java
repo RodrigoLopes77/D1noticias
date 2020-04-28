@@ -35,7 +35,7 @@ public class PaginaPrincipalController extends HttpServlet {
 		for(NoticiaModel noticiaModel : listaNoticiaModel) {
 			
 			response.getWriter().println("<h1>" + noticiaModel.getTitulo() + "</h1>" 
-										+"<h5>" + noticiaModel.getDescricao() + "</h5>" 
+										+"<h3>" + noticiaModel.getDescricao() + "</h3>" 
 										+"<p>" + noticiaModel.getTexto() + "</p>");
 			
 			ComentarioService comentarioService = new ComentarioService();
@@ -50,9 +50,12 @@ public class PaginaPrincipalController extends HttpServlet {
 			}
 			
 			response.getWriter().println("<form method=\"post\" action=\"cadastraComentario.do\">"
-										+ "<p> Adicionar comentário: </p>"
-										+"<p> Nome: </p>"
+										+"<br/>"
+										+"<br/>"
+										+ "<small> <p> Adicionar comentário: </p> </small>"
+										+"<p><small> Nome: <small></p>"
 										+"<input type=\"text\" value=\"\" name=\"nome\" />"
+									    +"<br/>"
 									    +"<br/>"
 										+"<input type=\"text\" value=\"\" name=\"comentario\" />"
 									    +"<input type=\"submit\" value=\"Comentar\" />"
